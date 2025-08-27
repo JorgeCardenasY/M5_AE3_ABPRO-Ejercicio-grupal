@@ -1,3 +1,6 @@
+-- Actividad Grupal M5_AE3_ABPRO
+-- Desarrollado por: Jorge Cárdenas, Emily Quintana
+
 -- 1.
 
 DROP DATABASE IF EXISTS Recitronic;
