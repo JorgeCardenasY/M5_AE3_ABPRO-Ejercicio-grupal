@@ -1,122 +1,105 @@
-# Ejercicio Grupal: RECITRONIC
+# 🗃️ M5_AE3_ABPRO-Ejercicio grupal[Actividad Evaluada]  
 
-## 📋 Contexto
-Un grupo de 3 amigos ha creado un emprendimiento llamado **RECITRONIC**, dedicado al reciclaje de electrónicos. Actualmente gestionan pedidos manualmente en un cuaderno, lo que genera:
-- Sobrecarga de trabajo
-- Citas duplicadas  
-- Falta de control sobre artículos reciclados
+### ✅ Requisitos de finalización  
+**Hecho**: 👀 Ver  
+**Por hacer**: 🛠️ Hacer un envío  
 
 ---
 
-## 🎯 Requerimientos de la Actividad
+## 👥 Ejercicio grupal  
 
-### 🗃️ Base de Datos y Tablas
-Crear las siguientes tablas con sus respectivas estructuras:
-
-#### Tabla `Clientes`
-| Campo        | Tipo         | Restricciones               |
-|--------------|--------------|-----------------------------|
-| `id_cliente` | INT          | PK, AUTO_INCREMENT          |
-| `nombre`     | VARCHAR      |                             |
-| `telefono`   | VARCHAR      |                             |
-| `direccion`  | VARCHAR      |                             |
-
-#### Tabla `Artículos`
-| Campo           | Tipo    | Restricciones                            |
-|-----------------|---------|------------------------------------------|
-| `id_articulo`   | INT     | PK, AUTO_INCREMENT                       |
-| `id_cliente`    | INT     | FK (REFERENCIA a Clientes)               |
-| `tipo_articulo` | VARCHAR |                                          |
-| `estado`        | VARCHAR |                                          |
-
-#### Tabla `Citas`
-| Campo         | Tipo      | Restricciones                            |
-|---------------|-----------|------------------------------------------|
-| `id_cita`     | INT       | PK, AUTO_INCREMENT                       |
-| `id_cliente`  | INT       | FK (REFERENCIA a Clientes)               |
-| `fecha_hora`  | DATETIME  |                                          |
-
-#### Tabla `Pagos`
-| Campo        | Tipo      | Restricciones                            |
-|--------------|-----------|------------------------------------------|
-| `id_pago`    | INT       | PK, AUTO_INCREMENT                       |
-| `id_cliente` | INT       | FK (REFERENCIA a Clientes)               |
-| `monto`      | DECIMAL   |                                          |
-| `fecha_pago` | DATETIME  |                                          |
+### 📌 Contexto  
+Un grupo de 3 amigos ha creado un emprendimiento llamado **“RECITRONIC”** ♻️, dedicado al reciclaje de electrónicos. Reciben pedidos para retirar artículos electrónicos en desuso, pero no tienen un sistema de gestión para coordinar las citas de manera eficiente. El proceso se lleva a cabo manualmente en un cuaderno 📓, lo que ha ocasionado:  
+- 🚚 Sobrecarga de trabajo  
+- 📅 Citas duplicadas  
+- ❌ Falta de control sobre los artículos reciclados  
 
 ---
 
-## ⚙️ Manipulación de Datos (DML)
+## 🎯 Requerimientos de la Actividad  
 
-### 📥 Insertar Información
-- Registros de clientes solicitantes del servicio
-- Artículos reciclados por cada cliente
-- Citas para agendar retiros de artículos
-- Pagos realizados por los clientes
-
-### 🔄 Actualizar Información  
-- Modificar fechas de citas por conflictos de horarios
-- Cambiar estado de artículos (ej: de *"pendiente"* a *"reciclado"*)
-
-### 🗑️ Eliminar Información
-- Eliminar artículos ingresados por error
-- Cancelar citas eliminando sus registros
+### 🗄️ Base de Datos y Tablas:  
+Crear las siguientes tablas en una base de datos:  
+- **Clientes**: 📇 Almacenar información de clientes.  
+- **Artículos**: 💻 Registrar artículos electrónicos para reciclar.  
+- **Citas**: 🗓️ Registrar citas agendadas para retiros.  
+- **Pagos**: 💰 Registrar pagos por servicios.  
 
 ---
 
-## 🛡️ Restricciones y Transacciones
+### ⚡ Manipulación de Datos (DML):  
+#### 📥 Insertar Información:  
+- Insertar registros de clientes.  
+- Insertar artículos reciclados por cliente.  
+- Insertar citas para retiros.  
+- Insertar pagos realizados.  
 
-### 🔗 Restricciones
-- Integridad referencial entre tablas
-- Validación de existencia de clientes antes de crear citas
-- Restricciones `NOT NULL`, `FOREIGN KEY`, etc.
+#### 🔄 Actualizar Información:  
+- Actualizar fechas de citas por conflictos 🚧.  
+- Actualizar estado de artículos (ej: de "pendiente" a "reciclado") ✅.  
 
-### 🔄 Secuencias
-- Identificadores únicos automáticos para:
-  - Citas
-  - Clientes  
-  - Pagos
-
-### 💾 Transacciones ACID
-- **Atomicidad**: Operaciones completas o revertidas
-- **Consistencia**: Validación de reglas pre/post transacción
-- **Aislamiento**: Ejecución independiente de transacciones
-- **Durabilidad**: Persistencia de cambios confirmados
-
-### ⚠️ Ejemplo de Rollback/Commit
-Transacción demostrativa con:
-- Confirmación (`COMMIT`) si todas las operaciones son exitosas
-- Reversión (`ROLLBACK`) si ocurre cualquier error
+#### 🗑️ Eliminar Información:  
+- Eliminar artículos ingresados por error ❌.  
+- Eliminar citas canceladas 🚫.  
 
 ---
 
-## 🚀 Pasos a Seguir
-
-### 1. Creación de Base de Datos y Tablas
-- Diseñar estructura con claves primarias y foráneas
-- Implementar restricciones de integridad
-
-### 2. Manipulación de Datos con SQL
-- Insertar datos de ejemplo
-- Realizar actualizaciones y eliminaciones
-
-### 3. Demostración de Transacciones  
-- Crear transacción con operaciones múltiples
-- Validar atomicidad con rollback/commit
-
-### 4. Implementación de Secuencias
-- Generar IDs automáticos con secuencias
-- Vincular con tablas correspondientes
+### 🔒 Restricciones y Transacciones:  
+- Usar restricciones para integridad referencial 🔗.  
+- Usar secuencias para IDs únicos 🔢.  
+- Usar transacciones para operaciones seguras ⚙️.  
+- Garantizar propiedades ACID 🧪.  
+- Ejemplo de **commit** ✅ y **rollback** ↩️.  
 
 ---
 
-## 📊 Componentes para Evaluar
+## 🚀 Pasos a Seguir  
+1. **Crear Base de Datos y Tablas** 🗃️:  
+   - Diseñar BD y tablas (Clientes, Artículos, Citas, Pagos).  
+   - Definir PKs, FKs y restricciones.  
 
-| Componente               | Descripción                                                                 |
-|--------------------------|-----------------------------------------------------------------------------|
-| **Uso de DML**           | Correcta inserción, actualización y eliminación de registros                |
-| **Secuencias**           | Generación automática de identificadores únicos                            |
-| **Integridad Referencial** | Consistencia en relaciones entre tablas                                   |
-| **Transacciones SQL**    | Implementación de operaciones atómicas con COMMIT/ROLLBACK                  |
-| **Restricciones**        | Uso de NOT NULL, FOREIGN KEY y validaciones adicionales                     |
-| **Confirmación**         | Manejo correcto de confirmaciones y reversiones de transacciones            |
+2. **Manipulación de Datos con SQL** 💾:  
+   - Insertar registros.  
+   - Actualizar información.  
+   - Eliminar registros.  
+
+3. **Transacciones** 🔄:  
+   - Crear transacciones atómicas.  
+
+4. **Secuencias y Restricciones** 🔢:  
+   - Generar IDs automáticamente.  
+   - Garantizar integridad referencial.  
+
+5. **Ejemplo de Rollback y Commit** ⚠️:  
+   - Demostrar confirmación o reversión de transacciones.  
+
+---
+
+## 🏗️ Estructura de la Base de Datos  
+| Tabla       | Columnas               | Tipo         | Restricción          |
+|-------------|------------------------|--------------|----------------------|
+| **Clientes** | id_cliente             | INT          | PK, AUTO_INCREMENT 🆔 |
+|             | nombre                 | VARCHAR      |                      |
+|             | telefono               | VARCHAR      |                      |
+|             | direccion              | VARCHAR      |                      |
+| **Artículos**| id_articulo            | INT          | PK, AUTO_INCREMENT 🆔 |
+|             | id_cliente             | INT          | FK 🔗                 |
+|             | tipo_articulo          | VARCHAR      |                      |
+|             | estado                 | VARCHAR      |                      |
+| **Citas**   | id_cita                | INT          | PK, AUTO_INCREMENT 🆔 |
+|             | id_cliente             | INT          | FK 🔗                 |
+|             | fecha_hora             | DATETIME     |                      |
+| **Pagos**   | id_pago                | INT          | PK, AUTO_INCREMENT 🆔 |
+|             | id_cliente             | INT          | FK 🔗                 |
+|             | monto                  | DECIMAL      |                      |
+|             | fecha_pago             | DATETIME     |                      |
+
+---
+
+## 📋 Componentes para Evaluar  
+- ✅ Uso correcto de DML (Insertar, Actualizar, Borrar).  
+- 🔢 Implementación de secuencias.  
+- 🔗 Integridad referencial.  
+- ⚙️ Transacciones SQL.  
+- 🚫 Restricciones (NOT NULL, FOREIGN KEY, etc.).  
+- ↩️✅ Uso de COMMIT y ROLLBACK.  
