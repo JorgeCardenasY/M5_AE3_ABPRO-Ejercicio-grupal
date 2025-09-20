@@ -1,9 +1,4 @@
 # 🗃️ M5_AE3_ABPRO-Ejercicio grupal[Actividad Evaluada]  
-
-### ✅ Requisitos de finalización  
-**Hecho**: 👀 Ver  
-**Por hacer**: 🛠️ Hacer un envío  
-
 ---
 
 ## 👥 Ejercicio grupal  
